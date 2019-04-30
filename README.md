@@ -1,0 +1,2 @@
+# RadarNetworkProject
+This is the code for my final project in my Network Location Theory master's level course.  It involves finding MLD optimal sets for placing radar stations over 4 states: Utah, Colorado, Arizona, and New Mexico.  The first map was created in R, and then Python was used to create the data and clean the results from the optimal solutions found in AMPL.  Analysis plots and dashboards were done by my partner, Michael Izzo, in Power BI.
