@@ -1,0 +1,123 @@
+---
+title: "Plotting 4 states and grid"
+author: "Ethan Buck"
+date: "April 23, 2019"
+output: html_document
+---
+
+```{r}
+library(ggplot2)
+library(ggmap)
+library(maps)
+library(mapdata)
+library(mapproj)
+#library(leaflet)
+```
+
+```{r}
+#m <- map_data('state', region = 'Oklahoma')
+m <- map_data('state', region = c('Utah', 'Colorado', 'Arizona', 'New Mexico'))
+#           map_data('state', region = 'Colorado'),
+#           map_data('state', region = 'Arizona'),
+#           map_data('state', region = 'New Mexico'))
+```
+
+```{r}
+ggplot() + geom_polygon(data = m, aes(x=long, y = lat, fill = region, group = group)) + 
+  coord_fixed(1.3)
+```
+
+```{r}
+m <- map('state', region = c('Utah', 'Colorado', 'Arizona', 'New Mexico'), plot = FALSE)
+map('state', region = c('Utah', 'Colorado', 'Arizona', 'New Mexico'), project="albers", par=c(39, 45))
+map.grid(m, nx = 22, ny = 23, label = FALSE)
+```
+
+```{r}
+# to see grid labels - latitude / longitude for plotting solutions
+m <- map('state', region = c('Utah', 'Colorado', 'Arizona', 'New Mexico'), plot = FALSE)
+map('state', region = c('Utah', 'Colorado', 'Arizona', 'New Mexico'), project="albers", par=c(39, 45))
+map.grid(m, nx = 22, ny = 23, label = TRUE, cex = .45)
+```
+
+```{r}
+# 109 longitude, 34.5 latitude
+# 108 longitude, 39.5 latitude
+```
+
+```{r}
+# 109.5 longitude, 34 latitude
+# 109.5 longitude, 39.5 latitude
+# 103 longitude, 36.5 latitude
+```
+
+```{r}
+# 111.5 longitude, 34.5 latitude
+# 104.5 longitude, 38.5 latitude
+# 106.5 longitude, 34 latitude
+# 111.5 longitude, 40 latitude
+```
+
+```{r}
+# 
+# 
+# 
+# 
+# 
+```
+
+```{r}
+# 
+# 
+# 
+# 
+# 
+# 
+```
+
+```{r}
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+```
+
+```{r}
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+```
+
+```{r}
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+```
+
+```{r}
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+```
+

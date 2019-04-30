@@ -1,0 +1,111 @@
+# Part A
+reset;
+model project.mod;
+data project.dat;
+options solver gurobi;
+
+# decrease num facilities by increasing DC
+#let DC := 201;
+#repeat{
+#  solve;
+#  if sum{j in 1..Nr_Nodes} X[j] != 6 then {
+#    break;
+#  }
+#  let DC := DC + 1;
+#}
+#display X > X5.txt;
+#display DC > DC5.txt;
+
+#let DC := DC + 1;
+#repeat{
+#  solve;
+#  if sum{j in 1..Nr_Nodes} X[j] != 5 then {
+#    break;
+#  }
+#  let DC := DC + 1;
+#}
+#display X > X4.txt;
+#display DC > DC4.txt;
+
+let DC := 240;
+#let DC := DC + 1;
+repeat{
+  solve;
+  if sum{j in 1..Nr_Nodes} X[j] != 4 then {
+    break;
+  }
+  let DC := DC + 10;
+}
+display X > X3.txt;
+display DC > DC3.txt;
+
+let DC := DC + 10;
+repeat{
+  solve;
+  if sum{j in 1..Nr_Nodes} X[j] != 3 then {
+    break;
+  }
+  let DC := DC + 10;
+}
+display X > X2.txt;
+display DC > DC2.txt;#
+
+# no resolving set exists for 1 node
+
+# increase num facilities by decreasing DC
+let DC := 190;
+repeat{
+  if DC <= 0 then {
+    break;
+  }
+  solve;
+  if sum{j in 1..Nr_Nodes} X[j] != 6 then {
+    break;
+  }
+  let DC := DC - 10;
+}
+display X > X7.txt;
+display DC > DC7.txt;
+
+let DC := DC - 10;
+repeat{
+  if DC <= 0 then {
+    break;
+  }
+  solve;
+  if sum{j in 1..Nr_Nodes} X[j] != 7 then {
+    break;
+  }
+  let DC := DC - 10;
+}
+display X > X8.txt;
+display DC > DC8.txt;
+
+let DC := DC - 10;
+repeat{
+  if DC <= 0 then {
+    break;
+  }
+  solve;
+  if sum{j in 1..Nr_Nodes} X[j] != 8 then {
+    break;
+  }
+  let DC := DC - 10;
+}
+display X > X9.txt;
+display DC > DC9.txt;
+
+let DC := DC - 10;
+repeat{
+  if DC <= 0 then {
+    break;
+  }
+  solve;
+  if sum{j in 1..Nr_Nodes} X[j] != 9 then {
+    break;
+  }
+  let DC := DC - 10;
+}
+display X > X10.txt;
+display DC > DC10.txt;
+
